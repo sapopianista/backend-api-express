@@ -10,32 +10,31 @@
     "mvc",
     "middlewares"
   ],
-  "homepage": "https://github.com/sapopianista/backend-api-express#readme",
+  "homepage": "https://github.com/renancavichi/backend-api-express-1sem2026#readme",
   "bugs": {
-    "url": "https://github.com/sapopianista/backend-api-express/issues"
+    "url": "https://github.com/renancavichi/backend-api-express-1sem2026/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sapopianista/backend-api-express.git"
+    "url": "git+https://github.com/renancavichi/backend-api-express-1sem2026.git"
   },
   "license": "ISC",
-  "author": "Tiago Vieira",
+  "author": "Renan Cavichi",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch --env-file=.env src/server.js",
-    "studio": "npx prisma studio"
+    "studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.4.2",
-    "@prisma/client": "^7.4.2",
+    "@prisma/client": "^7.5.0",
     "express": "^5.2.1",
-    "latest": "^0.2.0",
-    "mariadb": "^3.5.2"
+    "mariadb": "^3.5.2",
+    "prisma": "^7.5.0"
   },
   "devDependencies": {
-    "dotenv": "^17.3.1",
-    "prisma": "^6.19.2"
+    "dotenv": "^17.3.1"
   }
 }

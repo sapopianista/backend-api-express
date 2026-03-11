@@ -21,4 +21,6 @@ npm install cria package-look
 - Padrão de projeto MVC (Model-View-Controller):
     Model: Gerencia os dados, regras de negócio e lógica da aplicação, manipula as informações e interage com o banco de dados
     View: Responsável por enviar as ações do usuário para o Controller e exibir a interface do usuário (front-end)
-    Controller: Atua como intermediário entre a View e o Model, recebendo as solicitações via View, processa usando o Model e retorna as respostas
+    Controller: Atua como intermediário entre a View e o Model, recebendo as solicitações via View, processa usando o Model e retorna as respostas. Responsável pela entrada, processamento e saída dos dados.
+- O que é um ORM (Object-Relational Mapping)? É uma forma de  
+- Quais as vantagens de utilizar um ORM? Conseguir trocar de banco de dados com mais facilidade, com pouquíssimo esforço

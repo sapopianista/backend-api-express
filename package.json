@@ -24,9 +24,18 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node --watch src/server.js"
+    "dev": "node --watch --env-file=.env src/server.js",
+    "studio": "npx prisma studio"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "@prisma/adapter-mariadb": "^7.4.2",
+    "@prisma/client": "^7.4.2",
+    "express": "^5.2.1",
+    "latest": "^0.2.0",
+    "mariadb": "^3.5.2"
+  },
+  "devDependencies": {
+    "dotenv": "^17.3.1",
+    "prisma": "^6.19.2"
   }
 }

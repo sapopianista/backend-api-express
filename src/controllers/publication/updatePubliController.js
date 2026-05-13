@@ -1,6 +1,6 @@
 import { updatePublication, validatePublication } from "../../models/publicationModel.js";
 
-export async function updatePubliController(req, res){
+export async function updatePubliController(req, res, next) {
     const {id} = req.params
     const publication = req.body
     publication.id = +id

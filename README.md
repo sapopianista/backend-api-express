@@ -74,3 +74,9 @@
     - Para que são utilizados em geral os query params? Para filtros, em gets
 
 - Autenticação com JWT
+    - Quais as diferenças dos métodos de Autenticação? E como funcionam?
+        - Basic Acess ou Auth - Base64 (email:pass)
+        - Bearer Token (Opaque)
+        - Bearer Token JWT
+        - Bearer Token JWT + Refresh Token
+    - Quais as características do JWT?

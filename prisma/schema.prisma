@@ -8,12 +8,11 @@ datasource db {
 }
 
 model user {
-  id     Int    @id @default(autoincrement())
-  avatar String @db.VarChar(500)
-  name   String @db.VarChar(255)
-  email  String @unique
-  pass   String @db.VarChar(300)
-
+  id       Int       @id @default(autoincrement())
+  avatar   String    @db.VarChar(500)
+  name     String    @db.VarChar(255)
+  email    String    @unique
+  pass     String    @db.VarChar(300)
   sessions session[]
 }
 
@@ -25,10 +24,11 @@ model publication {
 }
 
 model session {
-  id        Int    @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   userId    Int
-  token     String @unique@db.VarChar(500)
+  token     String   @unique @db.VarChar(500)
   createdAt DateTime @default(now())
-  
-  user    user  @relation(fields: [userId], references: [id])
+  user      user     @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "session_userId_fkey")
 }

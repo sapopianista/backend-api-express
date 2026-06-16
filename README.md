@@ -60,9 +60,9 @@
     ----------------------------------------
 
 - Validação de Dados com Zod
-    - Para que serve a biblioteca do Zod? Ajuda a fazer a validação dos dados antes de enviar ao banco e a registrar as regras de negócio na camada de modelo na arquitetura MVC.
+    - Para que serve a biblioteca do Zod? Ajuda a fazer a validação dos dados antes de enviar ao banco e a registrar as regras de negócio na camada de modelo na arquitetura MVC e utilizado no controller.
     - Para que serve a função Partial? Para fazer a validação de rotas que não exigem todos os dados. Uma forma de tornar algo não obrigatório temporariamente para o teste; Uma forma de flexibilizar pontualmente uma propriedade obrigatória
-    - Qual a diferença do parse para o safeParse? Parse lança uma exceção no sistema quando para tratá-lo com try catch ocorre um erro; SafeParse quando gera um erro de validação devolve isso dentro de um objeto/propriedade
+    - Qual a diferença do parse para o safeParse? Parse lança uma exceção no sistema para tratá-lo com try catch quando ocorre um erro; SafeParse quando gera um erro de validação devolve isso dentro de um objeto/propriedade booleano
 
 - Tratamento de Erros
     - Qual o papel do ErrorHandler? Quando é lançada uma exceção, da uma mensagem mais amigável para o usuário
@@ -71,12 +71,17 @@
 
 - Query Params (exemplo: /user?name=tiago)
     - Como capturar um parametro query da url no Controller? Através do req.query
-    - Para que são utilizados em geral os query params? Para filtros, em gets
+    - Para que são utilizados em geral os query params? Para filtros, buscas de resultados em gets
 
 - Autenticação com JWT
     - Quais as diferenças dos métodos de Autenticação? E como funcionam?
-        - Basic Acess ou Auth - Base64 (email:pass)
+        - Basic Acess ou Auth - Base64 (email:pass):
+            Pega o user e pass do usuário e a cada request(requisição) vai enviar como base64 que é um conjunto simplificado de 64 caracteres para escrever as strings. base64 não é uma codificação, apenas um metodo de transcrever as strings de forma simplificada. Não é um método muito escalável devido ao alto número de requisições que afetam o desempenho. Ideal para comunicação interna entre apis em ambiente seguro
         - Bearer Token (Opaque)
+            Código aleatório único que não guarda nenhuma string dentro dele (token), toda vez que for acessar a api ele reverifica o token, semelhante ao base64 porém mais seguro devido a aleatóridade dos caracteres do token.
         - Bearer Token JWT
+            Armazena as informações do usuário em um token aleatório codificado para que o banco saiba de quem é o token e não fique fazendo requisições desnecessárias. Deve definir validade do token por questões de segurança pois se alguem tiver acesso ao token, pode ser um risco.
         - Bearer Token JWT + Refresh Token
+            Refresh token é o mais utilizado e mais seguro, pois verifica se o usuário continua acessando, e permanece logado gerando novos tokens, e o usuário pode encerrar as sessões parando a geração dos tokens.
     - Quais as características do JWT?
+        Não se devem colocar dados sensíveis no payload pois uma vez capturado o token, qualquer pessoa pode ter acesso a esses dados. A segurança está no segredo, que valida o token.
